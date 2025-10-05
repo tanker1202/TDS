@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "latency_metrics.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/latency-metrics",
+      "dest": "latency_metrics.py"
+    }
+  ]
+}
