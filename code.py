@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
@@ -19,15 +19,11 @@ class TelemetryRequest(BaseModel):
     regions: List[str]
     threshold_ms: int
 
-# Load telemetry records from a JSON file
 def load_telemetry_data():
     path = Path("q-vercel-latency.json")
-    if not path.exists():
-        raise FileNotFoundError("Telemetry JSON file not found.")
     with open(path, "r") as f:
         return json.load(f)
 
-# Load once on startup to avoid reloading on every request
 telemetry_records = load_telemetry_data()
 
 @app.post("/latency-metrics")
