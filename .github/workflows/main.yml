@@ -1,0 +1,17 @@
+name: Sample Workflow with Email Step
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: 23f2001691@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
