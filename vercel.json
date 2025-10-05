@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "latency_metrics.py",
+      "src": "api/code.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/latency-metrics",
-      "dest": "latency_metrics.py"
+      "dest": "api/code.py"
     }
   ]
 }
