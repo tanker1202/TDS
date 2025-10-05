@@ -20,7 +20,7 @@ class TelemetryRequest(BaseModel):
     threshold_ms: int
 
 def load_telemetry_data():
-    path = Path("telemetry.json")
+    path = Path("q-vercel-latency.json")
     with open(path, "r") as f:
         return json.load(f)
 
